@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <title>Pizza Builder</title>
+</head>
+<body>
+    <h1>Build Your Own Pizza</h1>
+    <form action="/pizza-builder-results" method="get">
+        <p>
+            <label for="size">Size:</label>
+            <select id="size" name="size">
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+            </select>
+        </p>
+        <p>
+            <label for="toppings">How many toppings?</label>
+            <input id="toppings" name="toppings" />
+        </p>
+        <ul>
+            {{#each toppings}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+        <p>
+            <input type="checkbox" id="glutenFree" name="glutenFree" value="glutenFree">
+            <label for="glutenFree">Gluten-Free Crust? ($2.00 extra)</label>
+        </p>
+        <p>
+            <label for="specialInstructions">Special Instructions: (Optional)</label>
+            <input id="specialInstructions" name="specialInstructions" />
+        </p>
+        <p>
+            <button type="submit">Calculate Price</button>
+            <a href="/">Never Mind</a>
+        </p>
+    </form>
+</body>
+</html>
